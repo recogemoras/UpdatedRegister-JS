@@ -1,24 +1,32 @@
+const total = 'TOTAL_PRICE';
+
 class Line {
     constructor() {
-        this.items = new Map();
-        items.set('VOUCHER', 0);
-        items.set('TSHIRT', 0);
-        items.set('PANTS', 0);
-        items.set('TOTAL_PRICE', 0);
-
-        let lineItems Object.fromEntries(map.entries());
+        this.lineItems = new Map();
+        lineItems.set('VOUCHER', 0);
+        lineItems.set('TSHIRT', 0);
+        lineItems.set('PANTS', 0);
+        lineItems.set('TOTAL_PRICE', 0);
     }
 
     addItem(itemCode) {
-        this.items.set(itemCode, lineItems.get(itemCode)+1);
+        this.lineItems.set(itemCode, lineItems.get(itemCode)+1);
     }
 
     getQuantityOfItem(itemCode) {
-        return this.items.get(itemCode, lineItems.get(itemCode));
+        return this.lineItems.get(itemCode, lineItems.get(itemCode));
+    }
+
+    setTotalPrice(totalPrice) {
+        this.lineItems.set(total, totalPrice);
+    }
+
+    getTotalPrice() {
+        return this.lineItems.get(total)
     }
 
     reset() {
-        this.items.clear();
+        this.lineItems.clear();
     }
 }
 

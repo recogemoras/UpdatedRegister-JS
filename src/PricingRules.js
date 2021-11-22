@@ -1,4 +1,6 @@
 const { Line } = require('./Line');
+const voucher = 'VOUCHER';
+const tshirt = 'TSHIRT';
 
 class PricingRules {
     constructor() {
@@ -8,11 +10,11 @@ class PricingRules {
     }
 
     applyVoucherPromo(lineItems) {
-        if (lineItems.get('VOUCHER')>0){
-            var quantity = lineItems.get('VOUCHER');
-            var totalOffers = quantity/2;
-            var fullPrice = quantity%2;
-
+        if (lineItems.get(voucher)>0){
+            var quantity = lineItems.get(voucher);
+            var totalOffers = Math.floor(quantity/2);
+            var fullPriceItems = quantity%2;
+            //TODO Adjust total price in line
         }
         this.prices.set(item, price);
     }

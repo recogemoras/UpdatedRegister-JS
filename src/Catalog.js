@@ -1,4 +1,6 @@
-var catalog = [
+const catalog = new Map();
+
+catalog = [
   {
     "CODE": "VOUCHER",
     "NAME": "Gift Cart",
@@ -14,4 +16,4 @@ var catalog = [
     "NAME": "Gift Cart",
     "PRICE": 7.5
   }
-]
+];

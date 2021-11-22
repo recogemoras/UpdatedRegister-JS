@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/recogemoras/UpdatedRegister-JS#readme",
   "dependencies": {
+    "console-read-write": "^0.1.1",
     "node": "^17.1.0"
   }
 }
