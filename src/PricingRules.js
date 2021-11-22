@@ -10,7 +10,8 @@ class PricingRules {
     applyVoucherPromo(lineItems) {
         if (lineItems.get('VOUCHER')>0){
             var quantity = lineItems.get('VOUCHER');
-            var totalPrice = (quantity/2);
+            var totalOffers = quantity/2;
+            var fullPrice = quantity%2;
 
         }
         this.prices.set(item, price);
