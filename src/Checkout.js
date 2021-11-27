@@ -4,7 +4,12 @@ const io = require('console-read-write');
 
 const { LineItems } = require('./Line');
 const { Catalog } = require('./Catalog.js');
-//const { Pricing_Rules } = require('./PricingRules');
+const { Pricing_Rules } = require('./PricingRules');
+//TODO remove writes and new if required
+io.write(this.LineItems);
+this.LineItems = new Line();
+io.write('After new:');
+io.write(this.LineItems);
 
 //to remove
 console.log('the catalog:', Catalog);
@@ -18,10 +23,12 @@ class Checkout {
     scan(item) {
 
         // TODO process input
-        var total = LineItems.getTotalPrice();
+        var total = this.LineItems.getTotalPrice();
         io.write('Total for now is:');
-    }
-    */
+        io.write(total);
+        this.LineItems.add(item);
+        io.write('Updated total:');
+        io.write(this.LineItems.getTotalPrice());
     }
 }
 

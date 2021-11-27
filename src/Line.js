@@ -10,7 +10,13 @@ class Line {
     }
 
     addItem(itemCode) {
-        this.lineItems.set(itemCode, lineItems.get(itemCode)+1);
+        if (this.lineItems.has(itemCode)) {
+            this.lineItems.set(itemCode, lineItems.get(itemCode)+1);
+        }
+        //TODO remove else
+        else {
+            console.log('Not a catalog item');
+        }
     }
 
     getQuantityOfItem(itemCode) {
