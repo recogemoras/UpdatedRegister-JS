@@ -2,22 +2,23 @@
 // TODO check for readline
 const io = require('console-read-write');
 
-const { Pricing_Rules } = require('./PricingRules');
 const { LineItems } = require('./Line');
 const { Catalog } = require('./Catalog.js');
+//const { Pricing_Rules } = require('./PricingRules');
 
 //to remove
-console.log(Catalog, 'the catalog:');
+console.log('the catalog:', Catalog);
 
 class Checkout {
-    constructor(rules) {
-        const Pricing_Rules = rules;
+    constructor(Pricing_Rules) {
+        //TODO constructor process
+        this.Pricing_Rules = Pricing_Rules;
     }
 
     scan(item) {
 
         // TODO process input
-        var total = LineItems.get
+        var total = LineItems.getTotalPrice();
         io.write('Total for now is:');
     }
     */
