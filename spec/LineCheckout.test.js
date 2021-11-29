@@ -15,7 +15,7 @@ describe('Checking out line items', () => {
             line = checkout.scan(item);
         }
         
-        expect(line.getTotalPrice().to.equal(0));
+        expect(line.getTotalPrice()).to.equal(0);
     });
         
 });
