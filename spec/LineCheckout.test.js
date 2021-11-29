@@ -3,19 +3,47 @@ const { Line, Catalog, PricingRules, Checkout } = require('../src');
 
 
 describe('Checking out line items', () => {
-    const catalog = new Catalog();
+    this.catalog = new Catalog();
     const pricing_rules = new PricingRules();
 
     it ('Should show a total of 0 as no items are added to the line', () => {
-        const line = new Line();
+        var line = new Line();
         const lineItems = [];
         const checkout = new Checkout(pricing_rules);
 
-        for (item in lineItems){
-            line = checkout.scan(item);
+        for (let item in lineItems) {
+            line = checkout.scan(lineItems[item]);
         }
-        
-        expect(line.getTotalPrice()).to.equal(0);
+        //console.log(line.lineItems.get('TOTAL_PRICE'));
+        expect(line.lineItems.get('TOTAL_PRICE')).to.equal(0);
+    });
+
+    it ('Should show a total of 32.5 with one TSHIRT one VOUCHER and one PANTS', () => {
+        var line = new Line();
+        const lineItems = ['TSHIRT', 'VOUCHER', 'PANTS'];
+        const checkout = new Checkout(pricing_rules);
+
+        for (let item in lineItems) {
+            //console.log(lineItems[item]);
+            line = checkout.scan(lineItems[item]);
+        }
+
+        //console.log(line.lineItems.getTotalPrice());
+        expect(line.lineItems.get('TOTAL_PRICE')).to.equal(32.5);
+    });
+
+    it ('Should show a total of 32.5 with one TSHIRT one VOUCHER and one PANTS in any order', () => {
+        var line = new Line();
+        //console.log(line.lineItems);
+        const lineItems = ['PANTS', 'TSHIRT', 'VOUCHER'];
+        const checkout = new Checkout(pricing_rules);
+
+        for (let item in lineItems) {
+            //console.log(lineItems[item]);
+            line = checkout.scan(lineItems[item]);
+        }
+
+        expect(line.lineItems.get('TOTAL_PRICE')).to.equal(32.5);
     });
         
 });

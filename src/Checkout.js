@@ -1,30 +1,18 @@
-// TODO check for readline
-const io = require('console-read-write');
-
-const { LineItems } = require('./Line');
-const { Catalog } = require('./Catalog.js');
-const { Pricing_Rules } = require('./PricingRules');
+const { Line } = require('./Line');
 
 class Checkout {
     constructor(Pricing_Rules) {
-        //TODO constructor process
-        this.Pricing_Rules = Pricing_Rules;
+        this.pricingRules = Pricing_Rules;
+        this.lineItems = new Line();
     }
 
     scan(item) {
-        
-        // TODO process input
-        var total = this.LineItems.getTotalPrice();
-        io.write('Total for now is:\n');
-        io.write(total);
-        this.LineItems.add(item);
-        io.write('Updated total:\n');
-        io.write(this.LineItems.getTotalPrice());
-        return this.LineItems;
+        var self = this;
+        //console.log(this.lineItems.lineItems);
+        self.lineItems.addItem(item);
+        return self.lineItems;
     }
 }
-
-
 
 module.exports = {
     Checkout,
