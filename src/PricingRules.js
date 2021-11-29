@@ -8,8 +8,9 @@ const total = 'TOTAL_PRICE'
 class PricingRules {
     constructor() {
         this.pricing_rules = new Map();
-        pricing_rules.set(voucher, 5);
-        pricing_rules.set(tshirt, 19)
+        this.pricing_rules.set(voucher, 5);
+        this.pricing_rules.set(tshirt, 19);
+        this.pricing_rules.set(total, 0);
     }
 
     applyVoucherPromo() {
@@ -30,7 +31,7 @@ class PricingRules {
             console.log('Total price: ');
             console.log(this.lineItems.getTotalPrice());
         }
-        return();
+        return;
     }
 
     applyTshirtPromo() {
@@ -53,7 +54,7 @@ class PricingRules {
         else if (tshirtQuantity>0) {
             this.lineItems.setTotalPrice(lineItems.getTotalPrice() + quantity*tshirtCost);
         }
-        return();
+        return;
     }
 
     reset() {

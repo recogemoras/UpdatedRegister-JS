@@ -1,19 +1,12 @@
-const catalog = new Map();
+class Catalog {
+    constructor() {
+        this.catalog = new Map();
+        this.catalog.set('VOUCHER', 5);
+        this.catalog.set('TSHIRT', 20);
+        this.catalog.set('PANTS', 7.5);
+    }
+}
 
-catalog = [
-  {
-    "CODE": "VOUCHER",
-    "NAME": "Gift Cart",
-    "PRICE": 5
-  },
-  {
-    "CODE": "TSHIRT",
-    "NAME": "Gift Cart",
-    "PRICE": 20
-  },
-  {
-    "CODE": "PANTS",
-    "NAME": "Gift Cart",
-    "PRICE": 7.5
-  }
-];
+module.exports = {
+    Catalog,
+};

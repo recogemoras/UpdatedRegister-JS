@@ -3,15 +3,15 @@ const total = 'TOTAL_PRICE';
 class Line {
     constructor() {
         this.lineItems = new Map();
-        lineItems.set('VOUCHER', 0);
-        lineItems.set('TSHIRT', 0);
-        lineItems.set('PANTS', 0);
-        lineItems.set('TOTAL_PRICE', 0);
+        this.lineItems.set('VOUCHER', 0);
+        this.lineItems.set('TSHIRT', 0);
+        this.lineItems.set('PANTS', 0);
+        this.lineItems.set('TOTAL_PRICE', 0);
     }
 
     addItem(itemCode) {
         if (this.lineItems.has(itemCode)) {
-            this.lineItems.set(itemCode, lineItems.get(itemCode)+1);
+            this.lineItems.set(itemCode, this.lineItems.get(itemCode)+1);
         }
         //TODO remove else
         else {
@@ -20,7 +20,7 @@ class Line {
     }
 
     getQuantityOfItem(itemCode) {
-        return this.lineItems.get(itemCode, lineItems.get(itemCode));
+        return this.lineItems.get(itemCode, this.lineItems.get(itemCode));
     }
 
     setTotalPrice(totalPrice) {
@@ -28,7 +28,10 @@ class Line {
     }
 
     getTotalPrice() {
-        return this.lineItems.get(total)
+        if (this.lineItems.get(total)) {
+            return this.lineItems.get(total);
+        }
+        return 0;
     }
 
     reset() {
