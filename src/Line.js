@@ -45,18 +45,20 @@ class Line {
         var pantsCost = this.catalog.catalog.get(Pants);
         var totalPrice = this.lineItems.get(Total);
         //console.log("pants " + pants);
-        this.lineItems.set(Total, totalPrice + pants*pantsCost);
+        this.lineItems.set(Total, totalPrice + pantsCost);
         //console.log('Pants added, current total: '+this.lineItems.get(total));
     }
 
     addPromos() {
         var vouchers = this.lineItems.get(Voucher);
         var pants = this.lineItems.get(Pants);
-        //console.log(pants);
+        //console.log('Total vouchers for now: ' + vouchers);
         var tshirts = this.lineItems.get(Tshirt);
         
         var voucherOffers = Math.floor(vouchers/2);
-        var vouchersFull = voucherOffers%2;
+        //console.log('Total voucher offers for now: ' + voucherOffers);
+        var vouchersFull = vouchers%2;
+        //console.log('Vouchers full price: ' + vouchersFull);
         var voucherFullCost = this.catalog.catalog.get(Voucher);
         var voucherOfferCost = this.pricing.pricingRules.get(Voucher);
 
