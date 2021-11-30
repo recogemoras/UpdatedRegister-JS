@@ -59,5 +59,19 @@ describe('Checking out line items', () => {
 
         expect(line.lineItems.get('TOTAL_PRICE')).to.equal(25);
     });
+
+    it ('Should show a total of 81 with 4 TSHIRTs and one VOUCHER in any order', () => {
+        var line = new Line();
+        //console.log(line.lineItems);
+        const lineItems = ['TSHIRT', 'TSHIRT', 'TSHIRT', 'VOUCHER', 'TSHIRT'];
+        const checkout = new Checkout(pricing_rules);
+
+        for (let item in lineItems) {
+            //console.log(lineItems[item]);
+            line = checkout.scan(lineItems[item]);
+        }
+
+        expect(line.lineItems.get('TOTAL_PRICE')).to.equal(81);
+    });
         
 });
