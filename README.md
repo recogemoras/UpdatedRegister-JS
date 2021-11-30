@@ -19,14 +19,14 @@ paid.
 - The Checkout object has a scan method that receives one item at a time
 
 #### Examples used for testing:
-- *Items*: no items - 0€
+- *Items*: no items - Total: 0€
 - *Items*: VOUCHER, TSHIRT, PANTS - Total: 32.50€
 - *Items*: VOUCHER, TSHIRT, VOUCHER - Total: 25.00€
 - *Items*: TSHIRT, TSHIRT, TSHIRT, VOUCHER, TSHIRT - Total: 81.00€
-- *Items*: VOUCHER, TSHIRT, VOUCHER, VOUCHER, PANTS, TSHIRT, TSHIRT - Total:74.50€
-- *Items*: VOUCHER, TSHIRT, VOUCHER, VOUCHER, PANTS, TSHIRT, TSHIRT, VOUCHER - Total:74.50€
-- *Items*: VOUCHER, TSHIRT, TSHIRT, VOUCHER, PANTS, TSHIRT, TSHIRT, TSHIRT - Total:107.50€
-- *Items*: VOUCHER, camisole, VOUCHER, PANTS, TSHIRT, VOUCHER - Total:37.50€
+- *Items*: VOUCHER, TSHIRT, VOUCHER, VOUCHER, PANTS, TSHIRT, TSHIRT - Total: 74.50€
+- *Items*: VOUCHER, TSHIRT, VOUCHER, VOUCHER, PANTS, TSHIRT, TSHIRT, VOUCHER - Total: 74.50€
+- *Items*: VOUCHER, TSHIRT, TSHIRT, VOUCHER, PANTS, TSHIRT, TSHIRT, TSHIRT - Total: 107.50€
+- *Items*: VOUCHER, camisole, VOUCHER, PANTS, TSHIRT, VOUCHER - Total: 37.50€
 
 ### Running the tests:
 The tests that you'll find under `spec` directory are written using [Mocha](https://mochajs.org/) test framework 
