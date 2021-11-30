@@ -13,20 +13,15 @@ class Line {
         this.lineItems.set(Tshirt, 0);
         this.lineItems.set(Pants, 0);
         this.lineItems.set(Total, 0);
-        
         this.catalog = new Catalog();
         this.pricing = new PricingRules();
-        //console.log(this.catalog);
     }
 
     addItem(itemCode) {
         if (this.lineItems.has(itemCode)) {
-            //console.log(this.lineItems);
             var itemQuantity = this.lineItems.get(itemCode);
-        
+
             this.lineItems.set(itemCode, itemQuantity + 1);
-            //console.log('Adding ' + itemQuantity+1 + ' ' + itemCode);
-            //console.log(this.lineItems.get(itemCode));
             this.applyPromos(itemCode);
         }
     }
@@ -44,21 +39,17 @@ class Line {
         var pants = this.lineItems.get(Pants);
         var pantsCost = this.catalog.catalog.get(Pants);
         var totalPrice = this.lineItems.get(Total);
-        //console.log("pants " + pants);
+        
         this.lineItems.set(Total, totalPrice + pantsCost);
-        //console.log('Pants added, current total: '+this.lineItems.get(total));
     }
 
     addPromos() {
         var vouchers = this.lineItems.get(Voucher);
         var pants = this.lineItems.get(Pants);
-        //console.log('Total vouchers for now: ' + vouchers);
         var tshirts = this.lineItems.get(Tshirt);
         
         var voucherOffers = Math.floor(vouchers/2);
-        //console.log('Total voucher offers for now: ' + voucherOffers);
         var vouchersFull = vouchers%2;
-        //console.log('Vouchers full price: ' + vouchersFull);
         var voucherFullCost = this.catalog.catalog.get(Voucher);
         var voucherOfferCost = this.pricing.pricingRules.get(Voucher);
 
@@ -80,7 +71,7 @@ class Line {
         else if (tshirts > 0) {
             totalPrice += tshirts*tshirtFullCost;
         }
-        //console.log("Total for now "+totalPrice);
+        
         this.lineItems.set(Total, totalPrice);
 
         if (pants > 0) {
