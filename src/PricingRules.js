@@ -1,6 +1,3 @@
-const { LineItems } = require('./Line');
-const { Catalog } = require('./Catalog');
-
 const voucher = 'VOUCHER';
 const tshirt = 'TSHIRT';
 const total = 'TOTAL_PRICE'

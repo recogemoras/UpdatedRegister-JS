@@ -8,8 +8,9 @@ class Checkout {
 
     scan(item) {
         var self = this;
-        //console.log(this.lineItems.lineItems);
+        
         self.lineItems.addItem(item);
+        
         return self.lineItems;
     }
 }
