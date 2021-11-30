@@ -19,7 +19,6 @@
   "homepage": "https://github.com/recogemoras/UpdatedRegister-JS#readme",
   "dependencies": {
     "chai": "^4.3.4",
-    "console-read-write": "^0.1.1",
     "mocha": "^9.1.3",
     "node": "^17.1.0",
     "src": "^1.1.2"
