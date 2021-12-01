@@ -27,6 +27,9 @@ paid.
 - *Items*: VOUCHER, TSHIRT, VOUCHER, VOUCHER, PANTS, TSHIRT, TSHIRT, VOUCHER - Total: 74.50€
 - *Items*: VOUCHER, TSHIRT, TSHIRT, VOUCHER, PANTS, TSHIRT, TSHIRT, TSHIRT - Total: 107.50€
 - *Items*: VOUCHER, camisole, VOUCHER, PANTS, TSHIRT, VOUCHER - Total: 37.50€
+- ...
+
+> For more examples check `LineCheckout.test.js` file on the `spec` folder
 
 ### Running the tests:
 The tests that you'll find under `spec` directory are written using [Mocha](https://mochajs.org/) test framework 
