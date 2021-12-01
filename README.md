@@ -15,8 +15,8 @@ A company is thinking about expanding its business and not only forecast sales i
 paid.
 
 ### The interface for the checkout process has the following specifications:
-- The Checkout constructor receives a pricing_rules object
-- The Checkout object has a scan method that receives one item at a time
+- The `Checkout` constructor receives a `pricing_rules` object
+- The `Checkout` object has a `scan` method that receives one item at a time
 
 #### Examples used for testing:
 - *Items*: no items - Total: 0€
