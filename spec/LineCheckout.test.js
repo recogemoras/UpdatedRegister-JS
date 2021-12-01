@@ -143,4 +143,32 @@ describe('Checking out line items', () => {
 
         expect(line.lineItems.get('TOTAL_PRICE')).to.equal(45);
     });
+
+    it ('Should show a total of 65 with 2 TSHIRTs, 4 VOUCHERs and two PANTs, in any order', () => {
+        var line = new Line();
+        //console.log(line.lineItems);
+        const lineItems = ['VOUCHER', 'PANTS', 'VOUCHER', 'PANTS', 'TSHIRT', 'VOUCHER', 'VOUCHER', 'TSHIRT'];
+        const checkout = new Checkout(pricing_rules);
+
+        for (let item in lineItems) {
+            //console.log(lineItems[item]);
+            line = checkout.scan(lineItems[item]);
+        }
+
+        expect(line.lineItems.get('TOTAL_PRICE')).to.equal(65);
+    });
+
+    it ('Should show a total of 82 with 3 TSHIRTs, 4 VOUCHERs and two PANTs, in any order', () => {
+        var line = new Line();
+        //console.log(line.lineItems);
+        const lineItems = ['VOUCHER', 'PANTS', 'VOUCHER', 'PANTS', 'TSHIRT', 'VOUCHER', 'VOUCHER', 'TSHIRT', 'TSHIRT'];
+        const checkout = new Checkout(pricing_rules);
+
+        for (let item in lineItems) {
+            //console.log(lineItems[item]);
+            line = checkout.scan(lineItems[item]);
+        }
+
+        expect(line.lineItems.get('TOTAL_PRICE')).to.equal(82);
+    });
 });
