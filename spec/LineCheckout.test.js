@@ -1,9 +1,8 @@
 const { expect } = require('./expect');
-const { Line, Catalog, PricingRules, Checkout } = require('../src');
+const { Line, PricingRules, Checkout } = require('../src');
 
 
 describe('Checking out line items', () => {
-    this.catalog = new Catalog();
     const pricing_rules = new PricingRules();
 
     it ('Should show a total of 0 as no items are added to the line', () => {
