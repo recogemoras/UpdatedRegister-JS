@@ -32,7 +32,6 @@ describe('Checking out line items', () => {
 
     it ('Should show a total of 32.5 with one TSHIRT one VOUCHER and one PANTS in any order', () => {
         var line = new Line();
-        //console.log(line.lineItems);
         const lineItems = ['PANTS', 'TSHIRT', 'VOUCHER'];
         const checkout = new Checkout(pricing_rules);
 
