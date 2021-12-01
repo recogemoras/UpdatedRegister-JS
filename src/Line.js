@@ -31,12 +31,11 @@ class Line {
             this.addPromos();
         }
         else {
-            this.addPants();
+            this.addPants(1);
         }
     }
 
-    addPants() {
-        var pants = this.lineItems.get(Pants);
+    addPants(pants) {
         var pantsCost = this.catalog.catalog.get(Pants);
         var totalPrice = this.lineItems.get(Total);
         
@@ -75,7 +74,7 @@ class Line {
         this.lineItems.set(Total, totalPrice);
 
         if (pants > 0) {
-            this.addPants();
+            this.addPants(pants);
         }
     }
 

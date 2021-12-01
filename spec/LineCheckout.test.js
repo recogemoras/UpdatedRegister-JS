@@ -171,4 +171,18 @@ describe('Checking out line items', () => {
 
         expect(line.lineItems.get('TOTAL_PRICE')).to.equal(82);
     });
+
+    it ('Should show a total of 47.5 with one TSHIRT, one VOUCHER and 3 PANTs, in any order', () => {
+        var line = new Line();
+        //console.log(line.lineItems);
+        const lineItems = ['VOUCHER', 'PANTS', 'PANTS', 'TSHIRT', 'PANTS'];
+        const checkout = new Checkout(pricing_rules);
+
+        for (let item in lineItems) {
+            //console.log(lineItems[item]);
+            line = checkout.scan(lineItems[item]);
+        }
+
+        expect(line.lineItems.get('TOTAL_PRICE')).to.equal(47.5);
+    });
 });
