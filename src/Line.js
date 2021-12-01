@@ -40,7 +40,7 @@ class Line {
         var pantsCost = this.catalog.catalog.get(Pants);
         var totalPrice = this.lineItems.get(Total);
         
-        this.lineItems.set(Total, totalPrice + pantsCost);
+        this.lineItems.set(Total, totalPrice + pants*pantsCost);
     }
 
     addPromos() {
